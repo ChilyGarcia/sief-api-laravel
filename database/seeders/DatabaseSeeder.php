@@ -16,9 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([
-            UserSeeder::class,
-            SpecialtySeeder::class
-        ]);
+        $this->call([UserSeeder::class, Career::class, AcademicPeriodSeeder::class, StatisticSeeder::class]);
     }
 }

@@ -17,26 +17,18 @@ class UserSeeder extends Seeder
         DB::table('users')->upsert(
             [
                 [
-                    'name' => 'professional@gmail.com',
-                    'email' => 'professional@gmail.com',
-                    'password' => Hash::make('professional@gmail.com'),
-                    'role' => 'professional',
+                    'name' => 'user@gmail.com',
+                    'email' => 'user@gmail.com',
+                    'password' => Hash::make('user@gmail.com'),
                 ],
                 [
-                    'name' => 'professional2@gmail.com',
-                    'email' => 'professional2@gmail.com',
-                    'password' => Hash::make('professional2@gmail.com'),
-                    'role' => 'professional',
-                ],
-                [
-                    'name' => 'patient@gmail.com',
-                    'email' => 'patient@gmail.com',
-                    'password' => Hash::make('patient@gmail.com'),
-                    'role' => 'patient',
+                    'name' => 'admin@gmail.com',
+                    'email' => 'admin@gmail.com',
+                    'password' => Hash::make('admin@gmail.com'),
                 ],
             ],
             ['email'],
-            ['name', 'password', 'role'],
+            ['name', 'password'],
         );
     }
 }
