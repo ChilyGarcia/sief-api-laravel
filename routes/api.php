@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AvailabilityController;
 use App\Http\Controllers\Api\HealthProfessionalController;
 use App\Http\Controllers\Api\Professional\ProfessionalAppointmentController;
 use App\Http\Controllers\Api\SpecialtyController;
+use App\Http\Controllers\Api\StatisticController;
 use App\Http\Controllers\ChatController;
 
 use Illuminate\Support\Facades\Route;
@@ -31,8 +32,8 @@ Route::group(
 );
 
 Route::group(['middleware' => 'auth:api'], function () {
-
-
+    Route::get('/statistics', [StatisticController::class, 'index']);
+    Route::post('/statistics', [StatisticController::class, 'store']);
 
     Route::post('/chat/message', [ChatController::class, 'sendMessage']);
 });
